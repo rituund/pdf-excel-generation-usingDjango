@@ -36,7 +36,7 @@ def generate_excel(request):
     ws.append(['ID', 'Name', 'Email', 'Courses'])
     for student in students:
         courses = ", ".join([course.name for course in student.courses.all()])
-        ws.append([student.id, student.name, student.email, courses])
+        ws.append([student.id, student.first_name, student.email, courses])
     
     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
     response['Content-Disposition'] = 'attachment; filename=students.xlsx'
@@ -68,7 +68,7 @@ def generate_pdf(request):
         y -= 20
         courses = ", ".join([course.name for course in student.courses.all()])
         p.drawString(col_id, y, str(student.id))
-        p.drawString(col_name, y, student.name)
+        p.drawString(col_name, y, student.first_name)
         p.drawString(col_email, y, student.email)
         p.drawString(col_courses, y, courses)
 
