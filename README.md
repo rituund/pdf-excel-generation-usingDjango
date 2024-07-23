@@ -1,5 +1,4 @@
 # pdf-excel_generation
-FSD Assignment-2
 ## SNAPSHOTS
 ### Registering a student:
 ![image](https://github.com/user-attachments/assets/60bd75d3-63ec-418d-a4aa-d51c1fcd4c1c)
